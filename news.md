@@ -18,14 +18,14 @@ sequenceDiagram
         Controller -->> Client: HTTP 400 Bad Request<br/>Invalid Query Parameters
     else Validation Succeeded
         Service ->> Scalardl: Validate Data Integrity and Authorization
-         Scalardl->> Database: Validate Data Integrity and Authorization
+        Scalardl ->> Database: Validate Data Integrity and Authorization
         alt Scalardl Validation Failed
             Scalardl -->> Service: Validation Error
             Database -->> Scalardl: Validation Error
             Service -->> Controller: HTTP 400 Bad Request<br/>Validation Error
             Controller -->> Client: HTTP 400 Bad Request<br/>Validation Error
         else Scalardl Validation Passed
-            Service ->> Database: Fetch STs List<br/>
+            Service ->> Database: Fetch STs List
             alt No Security Tokens Found
                 Database -->> Service: No Results Found
                 Service -->> Controller: HTTP 404 Not Found<br/>No Security Tokens
@@ -36,5 +36,4 @@ sequenceDiagram
                 Controller -->> Client: HTTP 200 OK<br/>with ST list with pagination
             end
         end
-  
-
+    end
