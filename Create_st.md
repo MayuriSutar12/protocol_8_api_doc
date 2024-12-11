@@ -6,7 +6,7 @@ This API facilitates the creation of a new security token (ST) for off-chain tra
 ---
 
 ## **API Endpoint**
-`POST /api/st/create`
+`POST /security-tokens`
 
 ## **Summary**
 Creates a new security token (ST) and associates it with the issuer.
