@@ -71,9 +71,9 @@ Creates a new security token (ST) and associates it with the issuer.
 1. **Frontend:** Initiates a POST request with `issuerId`, `tokenName`, `amount`, and `info`.
 2. **Controller:** Validates the request and forwards it to the service layer.
 3. **Service:**
-   - Validates data against ledger state.
+   - Validates data against scalardl state.
    - Ensures no conflicts (e.g., duplicate `st_id`, invalid `issuerId`).
-4. **Ledger:** Confirms the validity of `issuerId` and checks for existing `st_id` conflicts.
+4. **Scalardl:** Confirms the validity of `issuerId` and checks for existing `st_id` conflicts.
 5. **Database:** Creates the token entry and updates the issuer’s account balances.
 6. **Service:** Returns success response with `st_id` or propagates errors to the controller.
 7. **Controller:** Sends appropriate HTTP response to the frontend.
