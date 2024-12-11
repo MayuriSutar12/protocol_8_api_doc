@@ -25,7 +25,7 @@ sequenceDiagram
             Service ->> Database: Create Security Token Entry<br/>Update Issuer’s Account Balance
             Database -->> Service: Token Creation Confirmed
             Service -->> Controller: Success Response with st_id
-            Controller -->> Client: HTTP 201 Created<br/>with ST list
+            Controller -->> Client: HTTP 201 Created<br/>with St_id
         end
     end
 
