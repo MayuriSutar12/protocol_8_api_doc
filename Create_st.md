@@ -1,7 +1,7 @@
 # API Design: Create Security Token (ST)
 
 ## Overview
-This API facilitates the creation of a new security token (ST) for off-chain transactions. It validates user input, integrates with a ledger for state management, and ensures error handling to maintain system integrity.
+This API facilitates the creation of a new security token (ST) for off-chain transactions. It validates user input, integrates with a scalardl for state management, and ensures error handling to maintain system integrity.
 
 ---
 
