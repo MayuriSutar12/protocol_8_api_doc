@@ -23,12 +23,11 @@ Creates a new security token (ST) and associates it with the issuer.
 
 ```json
 {
-  "issuerId": "issuer123",
-  "tokenName": "MyToken",
-  "amount": 1000,
+  "issuer_id": "issuer123",
+  "token_name": "tokenABC",
+  "issued_amount": 1000,
   "info": {
-    "info_prop_1": "Propertyvalue",
-
+    "info_prop_1": "propertyValue"
   }
 }
 ```
