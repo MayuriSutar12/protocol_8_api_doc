@@ -109,7 +109,7 @@ sequenceDiagram
                 Controller -->> Client: HTTP 200 OK<br/>with ST list with pagination
             end
         end
-    end
+   
 ---
 
 ## **Procedure**
