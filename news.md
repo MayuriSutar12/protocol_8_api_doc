@@ -1,7 +1,4 @@
 ### Sample Sequence Diagram
-Here is a customizable sequence diagram format using Mermaid notation. Change participant roles and message interactions according to your specifications.
-sequenceDiagram
-
 
 ```mermaid
 sequenceDiagram
