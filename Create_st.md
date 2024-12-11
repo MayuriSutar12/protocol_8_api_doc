@@ -27,10 +27,8 @@ Creates a new security token (ST) and associates it with the issuer.
   "tokenName": "MyToken",
   "amount": 1000,
   "info": {
-    "description": "Sample token",
-    "details": {
-      "type": "utility"
-    }
+    "info_prop_1": "Propertyvalue",
+
   }
 }
 ```
