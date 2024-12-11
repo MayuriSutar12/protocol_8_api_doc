@@ -72,15 +72,15 @@ Fetches a list of all security tokens (STs) with optional pagination using query
 
 ## **Procedure**
 
-1. **Frontend:** Sends a `GET` request to `/security-tokens` with optional query parameters `limit` and `offset`.
-2. **Backend:** Handles the request:
+1.  Sends a `GET` request to `/security-tokens` with optional query parameters `limit` and `offset`.
+2.  Handles the request:
    - Validates the query parameters:
      - Ensures `limit` is a positive integer.
      - Ensures `offset` is a non-negative integer.
-   - Fetches the list of STs from the database, applying pagination.
-3. **Database:** Executes the query to retrieve the ST list based on `limit` and `offset`.
-4. **Backend Response:** Returns the retrieved list or propagates errors:
-   - **Success (200):** Sends the array of ST objects.
-   - **Error:** Sends appropriate status codes and error messages.
+   - Fetches the list of STs from the database, applying pagination based on limit and offset.
+3.  Executes the query to retrieve the ST list. 
+4.  Returns the retrieved list or propagates errors:
+   - Sends the array of ST objects.
+   - Sends appropriate status codes and error messages.
 
 ---
