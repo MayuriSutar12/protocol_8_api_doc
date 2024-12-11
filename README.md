@@ -39,11 +39,11 @@ Creates a new security token (ST) and associates it with the issuer.
 
 | HTTP Code | Description                                  | Response Body           |
 |-----------|----------------------------------------------|-------------------------|
-| 200       | Security token successfully created          | `CreateStResponse`      |
+| 201       | Security token successfully created          | `CreateStResponse`      |
 | 400       | Bad request (e.g., invalid input)            | `Error` object          |
 | 500       | Internal server error                        | `Error` object          |
 
-### **Example Response (200)**
+### **Example Response (201)**
 
 ```json
 {
