@@ -32,13 +32,16 @@ Creates a new security token (ST) and associates it with the issuer.
 }
 ```
 
-## **Responses**
+#### Responses
 
-| HTTP Code | Description                                  | Response Body           |
-|-----------|----------------------------------------------|-------------------------|
-| 201       | Security token successfully created          | `CreateStResponse`      |
-| 400       | Bad request (e.g., invalid input)            | `Error` object          |
-| 500       | Internal server error                        | `Error` object          |
+| HTTP Code | Description                                    | Response Body                           |
+|-----------|------------------------------------------------|-----------------------------------------|
+| 201       | Security token successfully created            | `{ "st_id": "issuer123-tokenABC" }`     |
+| 400       | Bad Request.                                   | `Error` object                          |
+| 404       | The requested resource does not exist          | `Error` object                          |
+| 409       | Conflict. The specified ST-ID already exists   | `Error` object                          |
+| 500       | Internal server error                          | `Error` object                          |
+
 
 ### **Example Response (201)**
 
@@ -56,7 +59,17 @@ Creates a new security token (ST) and associates it with the issuer.
   "error": "Issued amount must be positive"
 }
 ```
-
+#### **Not Found   (404)**
+```json
+{
+  "error": "The requested resource does not exist"
+}
+```
+#### **Conflict  (409)**
+```json
+{
+  "error": "Conflict. The specified ST-ID already exists"
+}
 #### **Internal Server Error (500)**
 ```json
 {
