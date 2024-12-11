@@ -30,6 +30,7 @@ Fetches a list of all security tokens (STs) with optional pagination using query
 | HTTP Code | Description                                    | Response Body       |
 |-----------|------------------------------------------------|---------------------|
 | 200       | Successfully retrieved list of security tokens.| Array of `ST` objects|
+| 400       | Bad Request.                                   | `Error` object      |
 | 404       | No security tokens found.                      | `Error` object      |
 | 500       | Internal server error.                         | `Error` object      |
 
@@ -54,6 +55,13 @@ Fetches a list of all security tokens (STs) with optional pagination using query
 
 ### **Example Error Responses**
 
+```
+#### **Bad Request (400)**
+```json
+{
+  "error": "Issued amount must be positive"
+}
+```
 #### **Resource Not Found (404)**
 ```json
 {
