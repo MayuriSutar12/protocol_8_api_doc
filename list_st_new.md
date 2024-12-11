@@ -30,7 +30,7 @@ Fetches a list of all security tokens (STs) with optional pagination using query
 | HTTP Code | Description                                    | Response Body       |
 |-----------|------------------------------------------------|---------------------|
 | 200       | Successfully retrieved list of security tokens.| Array of `ST` objects|
-| 400       | Malformed request, validation failed.          | `Error` object      |
+| 404       | No security tokens found.                      | `Error` object      |
 | 500       | Internal server error.                         | `Error` object      |
 
 
@@ -54,13 +54,6 @@ Fetches a list of all security tokens (STs) with optional pagination using query
 
 ### **Example Error Responses**
 
-#### **Malformed Request (400)**
-```json
-{
-  "error": "Invalid 'limit' parameter. Must be a positive integer."
-}
-```
-
 #### **Resource Not Found (404)**
 ```json
 {
@@ -72,13 +65,6 @@ Fetches a list of all security tokens (STs) with optional pagination using query
 ```json
 {
   "error": "An unexpected error occurred."
-}
-```
-
-#### **Service Unavailable (503)**
-```json
-{
-  "error": "Service is temporarily unavailable. Please try again later."
 }
 ```
 
