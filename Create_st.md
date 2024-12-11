@@ -44,7 +44,7 @@ Creates a new security token (ST) and associates it with the issuer.
 
 ```json
 {
-  "st_id": "issuer123-MyToken"
+  "issuer_id": "issuer123-MyToken"
 }
 ```
 
