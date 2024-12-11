@@ -70,6 +70,7 @@ Creates a new security token (ST) and associates it with the issuer.
 {
   "error": "Conflict. The specified ST-ID already exists"
 }
+```
 #### **Internal Server Error (500)**
 ```json
 {
