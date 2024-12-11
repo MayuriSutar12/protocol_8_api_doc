@@ -55,7 +55,6 @@ Fetches a list of all security tokens (STs) with optional pagination using query
 
 ### **Example Error Responses**
 
-```
 #### **Bad Request (400)**
 ```json
 {
