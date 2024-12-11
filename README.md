@@ -5,7 +5,7 @@ This API facilitates the creation of a new security token (ST) for off-chain tra
 
 ---
 
-## ****
+## **API Endpoint**
 `POST /api/st/create`
 
 ## **Summary**
@@ -51,10 +51,6 @@ Creates a new security token (ST) and associates it with the issuer.
 }
 ```
 
-### **Field Descriptions**
-
-- **st_id** *(String)*: Unique identifier for the created security token.
-
 ### **Error Responses**
 
 #### **Bad Request (400)**
@@ -70,7 +66,6 @@ Creates a new security token (ST) and associates it with the issuer.
   "error": "An unexpected error occurred"
 }
 ```
-
 
 ### **Procedure**
 1. **Frontend:** Initiates a POST request with `issuerId`, `tokenName`, `amount`, and `info`.
