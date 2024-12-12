@@ -21,7 +21,7 @@ sequenceDiagram
             Controller -->> Client: HTTP 400/409 Error Response
         else Validation Passed
             Service ->> Scalardl: Create Security Token Entry<br/>Update Issuer’s Account Balance
-            Database -->> Service: Token Creation Confirmed
+            Scalardl -->> Service: Token Creation Confirmed
             Service -->> Controller: Success Response with st_id
             Controller -->> Client: HTTP 201 Created<br/>with St_id
         end
