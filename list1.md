@@ -13,8 +13,8 @@ sequenceDiagram
     alt Empty List
         Database -->> Service: Empty List
         Service -->> Controller: Empty List
-        Controller -->> Client: HTTP 404 Not Found<br/>No Resources Found
-    else Resources Found
+        Controller -->> Client: HTTP 404 Not Found<br/>Error responce
+    else Security tokens found
         Database -->> Service: Return List of STs
         Service -->> Controller: Return List of STs
         Controller -->> Client: HTTP 200 OK<br/>with ST list with pagination
