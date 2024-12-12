@@ -12,7 +12,6 @@
     Controller ->> Service: Validate Request Body
     Service ->> Scalardl: Create Security Token
     Scalardl -->> Service: Error Response
-    alt 
         Service -->> Controller: Error Response
         Controller -->> Client: Error Response<br/>Validation Error or Duplicate st_id
     else Token Creation Success
