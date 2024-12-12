@@ -3,6 +3,7 @@
 ## Overview
 
 This API creates a security token (ST) using Scalar DL.
+
 ---
 
 ### Sequence Diagram
