@@ -9,7 +9,7 @@ sequenceDiagram
 
     Client ->> Controller: GET /security-tokens<br/>with limit and offset (optional)
     Controller ->> Service: Retrieve Resources (limit, offset)
-    Service ->> Database: Query Resources with limit and offset
+    Service ->> Database: Return List of STs
     alt Empty List
         Database -->> Service: Empty List
         Service -->> Controller: Empty List
