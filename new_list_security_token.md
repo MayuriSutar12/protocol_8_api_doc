@@ -13,6 +13,7 @@ sequenceDiagram
     alt 
 
         Service -->> Controller: Empty List
+        Controller -->> Client: HTTP 400 Bad Request<br/>Validation Error
         Controller -->> Client: HTTP 404 Not Found<br/>No Security Tokens
     else Security Tokens Found
         Database -->> Service: Return List of STs
