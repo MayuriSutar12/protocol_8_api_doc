@@ -1,6 +1,3 @@
-## Sequence Diagram  
-
-```mermaid
 sequenceDiagram
     participant Client as Client
     participant Controller as Controller
@@ -10,9 +7,10 @@ sequenceDiagram
     Client ->> Controller: GET /security-tokens<br/>with limit and offset (optional)
     Controller ->> Service: Validate Query Parameters (limit, offset)
     alt Validation Failed
-     Controller -->> Client: HTTP 400 Bad Request<br/>Invalid Query Parameters
+        Controller -->> Client: HTTP 400 Bad Request<br/>Invalid Query Parameters
     else Validation Succeeded
-      
+        Service ->> Database: Validate Data Integrity and Authorization
+        alt Validation Error
             Database -->> Service: Validation Error
             Service -->> Controller: HTTP 400 Bad Request<br/>Validation Error
             Controller -->> Client: HTTP 400 Bad Request<br/>Validation Error
@@ -20,6 +18,7 @@ sequenceDiagram
             Service ->> Database: Fetch STs List
             alt No Security Tokens Found
                 Database -->> Service: No Results Found
+                Service -->> Controller: HTTP 404 Not Found<br/>No Security Tokens
                 Controller -->> Client: HTTP 404 Not Found<br/>No Security Tokens
             else Security Tokens Found
                 Database -->> Service: Return List of STs
@@ -28,5 +27,4 @@ sequenceDiagram
             end
         end
     end
-
-```
+`
