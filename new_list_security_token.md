@@ -11,7 +11,7 @@ sequenceDiagram
     Controller ->> Service: Fetch STs List with limit and offset
     Service ->> Database: Fetch STs List
     alt 
-        Database -->> Service: No Results Found
+
         Service -->> Controller: Empty List
         Controller -->> Client: HTTP 404 Not Found<br/>No Security Tokens
     else Security Tokens Found
