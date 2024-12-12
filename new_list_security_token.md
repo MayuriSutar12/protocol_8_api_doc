@@ -1,20 +1,27 @@
+### Sample Sequence Diagram
+
+```mermaid
 sequenceDiagram
     participant Client as Client
     participant Controller as Controller
     participant Service as Service
+    participant Scalardl as Scalardl
     participant Database as Database
 
     Client ->> Controller: GET /security-tokens<br/>with limit and offset (optional)
     Controller ->> Service: Validate Query Parameters (limit, offset)
     alt Validation Failed
+        Service -->> Controller: HTTP 400 Bad Request<br/>Invalid Query Parameters
         Controller -->> Client: HTTP 400 Bad Request<br/>Invalid Query Parameters
     else Validation Succeeded
-        Service ->> Database: Validate Data Integrity and Authorization
-        alt Validation Error
-            Database -->> Service: Validation Error
+        Service ->> Scalardl: Validate Data Integrity and Authorization
+        Scalardl ->> Database: Validate Data Integrity and Authorization
+        alt Scalardl Validation Failed
+            Scalardl -->> Service: Validation Error
+            Database -->> Scalardl: Validation Error
             Service -->> Controller: HTTP 400 Bad Request<br/>Validation Error
             Controller -->> Client: HTTP 400 Bad Request<br/>Validation Error
-        else Validation Success
+        else Scalardl Validation Passed
             Service ->> Database: Fetch STs List
             alt No Security Tokens Found
                 Database -->> Service: No Results Found
@@ -26,5 +33,5 @@ sequenceDiagram
                 Controller -->> Client: HTTP 200 OK<br/>with ST list with pagination
             end
         end
-    end
-`
+end
+```
