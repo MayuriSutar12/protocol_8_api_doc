@@ -13,7 +13,7 @@
     Service ->> Scalardl: Create Security Token
     alt Invalid issuer_id or Duplicate st_id Found
         Scalardl -->> Service: Error Response
-        Service -->> Controller: Error Response
+        Service -->> Controller:  Invalid issuer_id or Duplicate st_id Found
         Controller -->> Client: Error Response<br/>Validation Error or Duplicate st_id
     else Token Creation Success
         Scalardl -->> Service: Success Response
