@@ -1,7 +1,7 @@
 
 ### Sample Sequence Diagram
 ```mermaid
- sequenceDiagram
+   sequenceDiagram
     participant Client as Client
     participant Controller as Controller
     participant Service as Service
@@ -11,7 +11,8 @@
     Client ->> Controller: POST /security-tokens<br/>with issuer_id, token_name, issued_amount, info
     Controller ->> Service: Validate Request Body
     Service ->> Scalardl: Create Security Token
-    Scalardl -->> Service: Error Response
+    alt Invalid issuer_id or Duplicate st_id Found
+        Scalardl -->> Service: Error Response
         Service -->> Controller: Error Response
         Controller -->> Client: Error Response<br/>Validation Error or Duplicate st_id
     else Token Creation Success
