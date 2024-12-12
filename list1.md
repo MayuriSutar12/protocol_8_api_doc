@@ -10,11 +10,7 @@ sequenceDiagram
     Client ->> Controller: GET /security-tokens<br/>with limit and offset (optional)
     Controller ->> Service: Retrieve Resources (limit, offset)
     Service ->> Database: Fetch STs List
-    alt Empty List
-        Database -->> Service: Empty List
-        Service -->> Controller: Empty List
         Controller -->> Client: HTTP 404 Not Found<br/>Error responce
-    else Security tokens found
         Database -->> Service: Return List of STs
         Service -->> Controller: Return List of STs
         Controller -->> Client: HTTP 200 OK<br/>with ST list with pagination
