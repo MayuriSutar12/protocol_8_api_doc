@@ -8,9 +8,9 @@ sequenceDiagram
     participant Database as Database
 
     Client ->> Controller: GET /security-tokens<br/>with limit and offset (optional)
-    Controller ->> Service: Retrieve Resources (limit, offset)
-    Service ->> Database: Fetch STs List
-    Database -->> Service: Return List of STs
-    Service -->> Controller: Return List of STs
-    Controller -->> Client: HTTP 200 OK<br/>with ST list and pagination 
+    Controller ->> Service: Retrieve Security token (limit, offset)
+    Service ->> Database: Scan Security tokens 
+    Database -->> Service: Return List of Security tokens
+    Service -->> Controller: Return List of Security tokens
+    Controller -->> Client: Success responce<br/>with ST list and pagination 
 
