@@ -9,7 +9,6 @@ sequenceDiagram
 
     Client ->> Controller: GET /security-tokens<br/>with limit and offset (optional)
     Controller ->> Service: Validate Query Parameters (limit, offset)
-    alt Validation Failed
         Controller -->> Client: HTTP 400 Bad Request<br/>Invalid Query Parameters
     else fetch ST list
         alt Scalardl Validation Failed
