@@ -1,6 +1,6 @@
 ### Sample Sequence Diagram
 
-mermaid
+```mermaid
 sequenceDiagram
     participant Client as Client
     participant Controller as Controller
