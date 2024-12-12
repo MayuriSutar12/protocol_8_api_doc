@@ -17,7 +17,6 @@ sequenceDiagram
             Database -->> Scalardl: Validation Error
             Service -->> Controller: HTTP 400 Bad Request<br/>Validation Error
             Controller -->> Client: HTTP 400 Bad Request<br/>Validation Error
-        else Scalardl Validation Passed
             Service ->> Database: Fetch STs List
             alt No Security Tokens Found
                 Database -->> Service: No Results Found
