@@ -2,7 +2,7 @@
 
 ## Overview
 
-This API creates a security token (ST) using Scalar DL.
+This API creates a security token (ST) using ScalarDL. It ensures input validation, interacts with ScalarDL for token creation, and handles potential errors like duplicate token IDs or invalid issuer IDs.
 
 ---
 
