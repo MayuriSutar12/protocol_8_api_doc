@@ -11,6 +11,6 @@ sequenceDiagram
     Controller ->> Service: Retrieve Security tokens (limit, offset)
     Service ->> Database: Scan Security tokens 
     Database -->> Service: Return List of Security tokens
-    Service -->> Controller: Return List of Security tokens
-    Controller -->> Client: Success responce<br/>with Security tokens list and pagination 
+    Service -->> Controller: Return List of Security tokens with pagination
+    Controller -->> Client: Success responce
 
