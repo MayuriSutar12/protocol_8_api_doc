@@ -19,10 +19,7 @@ sequenceDiagram
             Service ->> Database: Fetch STs List
             alt No Security Tokens Found
                 Database -->> Service: No Results Found
-                Controller -->> Client: HTTP 404 Not Found<br/>No Security Tokens
-            else Security Tokens Found
                 Database -->> Service: Return List of STs
-                Service -->> Controller: HTTP 200 OK<br/>with ST list with pagination
                 Controller -->> Client: HTTP 200 OK<br/>with ST list with pagination
             end
         end
