@@ -14,6 +14,7 @@ sequenceDiagram
 
         Service -->> Controller: Empty List
         Controller -->> Client: HTTP 400 Bad Request<br/>Error Response
+       Service -->> Controller: Error Response
         Controller -->> Client:HTTP 400 Not Found
     else Security Tokens Found
         Database -->> Service: Return List of STs
