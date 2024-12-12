@@ -11,7 +11,6 @@ sequenceDiagram
     Controller ->> Service: Fetch STs List with limit and offset
     Service ->> Database: Fetch STs List
     alt 
-
         Service -->> Controller: Empty List
         Controller -->> Client: HTTP 400 Bad Request<br/>Error Response
        Service -->> Controller: Error Response
