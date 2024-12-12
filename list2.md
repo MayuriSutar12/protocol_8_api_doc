@@ -12,5 +12,5 @@ sequenceDiagram
     Service ->> Database: Scan Security tokens 
     Database -->> Service: Return List of Security tokens
     Service -->> Controller: Return List of Security tokens
-    Controller -->> Client: Success responce<br/>with ST list and pagination 
+    Controller -->> Client: Success responce<br/>with Security tokens list and pagination 
 
