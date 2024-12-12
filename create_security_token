@@ -3,22 +3,25 @@
 ## Overview
 This API facilitates the creation of a new security token (ST) for off-chain transactions. It validates user input, integrates with a scalardl for state management, and ensures error handling to maintain system integrity.
 ---
-## Goals
-Security and Integrity
-Ensure valid, unique tokens are created, preventing conflicts or unauthorized actions.
+## Goals  
 
-Error Handling
-Deliver clear feedback via appropriate HTTP responses to aid client-side issue resolution.
+### Security and Integrity  
+Ensure valid, unique tokens are created, preventing conflicts or unauthorized actions.  
 
-Efficiency
-Optimize workflows for faster validation and token creation.
+### Error Handling  
+Deliver clear feedback via appropriate HTTP responses to aid client-side issue resolution.  
 
-Scalability
-Design a modular and extensible API to accommodate future requirements.
+### Efficiency  
+Optimize workflows for faster validation and token creation.  
 
-Traceability
-Enable robust tracking of all requests and transactions for auditing and debugging purposes.
+### Scalability  
+Design a modular and extensible API to accommodate future requirements.  
+
+### Traceability  
+Enable robust tracking of all requests and transactions for auditing and debugging purposes.  
+
 ---
+
 
 ### Sequence Diagram
 
