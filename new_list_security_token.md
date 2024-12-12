@@ -1,5 +1,4 @@
-```
-### Sample Sequence Diagram
+## Sequence Diagram  
 
 ```mermaid
 sequenceDiagram
