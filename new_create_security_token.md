@@ -1,7 +1,7 @@
 
 ### Sample Sequence Diagram
 ```mermaid
-sequenceDiagram
+   sequenceDiagram
     participant Client as Client
     participant Controller as Controller
     participant Service as Service
@@ -15,7 +15,13 @@ sequenceDiagram
         Controller -->> Client: HTTP 400 Bad Request<br/>Invalid issuer_id or Duplicate st_id
     else Valid Request Body
         Service ->> Scalardl: Create Security Token
-        Scalardl -->> Service: Token Creation Confirmed
-        Service -->> Controller: HTTP 201 Created<br/>Success with st_id
-        Controller -->> Client: HTTP 201 Created<br/>with st_id
+        alt Token Creation Success
+            Scalardl -->> Service: Token Creation Confirmed
+            Service -->> Controller: HTTP 201 Created<br/>Success with st_id
+            Controller -->> Client: HTTP 201 Created<br/>with st_id
+        else Token Creation Failed
+            Scalardl -->> Service: Error Response
+            Service -->> Controller: HTTP 400 Bad Request<br/>Token Creation Failed
+            Controller -->> Client: HTTP 400 Bad Request<br/>Token Creation Failed
+        end
     end
