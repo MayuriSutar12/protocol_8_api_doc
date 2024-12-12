@@ -12,7 +12,7 @@ sequenceDiagram
     participant Client as Client
     participant Controller as Controller
     participant Service as Service
-    participant Database as Database
+    participant Database as ScalarDB
 
     Client ->> Controller: GET /security-tokens<br/>with limit and offset (optional)
     Controller ->> Service: Retrieve Security tokens (limit, offset)
