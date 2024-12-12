@@ -37,4 +37,4 @@ sequenceDiagram
 2. Controller validates the request and forwards it to the service layer.
 3. Service call the  ScalarDL to create the token.
 4. If a duplicate st_id or invalid issuerId is detected, an error response is returned.
-5. If successful, ScalarDL returns the created `st_id`, and coltroller return a success response.
+5. If successful, ScalarDL returns the created `st_id`, and controller return a success response.
