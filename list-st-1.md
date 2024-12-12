@@ -19,7 +19,7 @@ sequenceDiagram
     Database -->> Service: Return List of Security tokens
     Service -->> Controller: Return List of Security tokens with pagination
     Controller -->> Client: Success responce
-end 
+
 ```
 ---
 
