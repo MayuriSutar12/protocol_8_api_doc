@@ -15,7 +15,7 @@
         Scalardl -->> Service: Error Response
         Service -->> Controller:  Invalid issuer_id or Duplicate st_id Found
         Controller -->> Client: Error Response
-        Scalardl -->> Service: Success Response
+        Scalardl -->> Service: Success Response with st_id
         Service -->> Controller: Success Response with st_id
         Controller -->> Client: Success Response
     end
