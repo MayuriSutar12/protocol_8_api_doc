@@ -11,7 +11,7 @@ sequenceDiagram
     Controller ->> Service: Validate Query Parameters (limit, offset)
     alt Validation Failed
         Controller -->> Client: HTTP 400 Bad Request<br/>Invalid Query Parameters
-    else Validation Succeeded
+    else fetch ST list
         alt Scalardl Validation Failed
             Controller -->> Client: HTTP 400 Bad Request<br/>Validation Error
         else Scalardl Validation Passed
