@@ -11,7 +11,6 @@ sequenceDiagram
     Client ->> Controller: POST /security-tokens<br/>with issuer_id, token_name, issued_amount, info
     Controller ->> Service: Validate Request Body
     alt Validation Failed
-        Service -->> Controller: Validation Error
         Service ->> Scalardl:  Error Responce
         alt Invalid issuer_id or Duplicate st_id Found
             Service -->> Controller: Error Response
