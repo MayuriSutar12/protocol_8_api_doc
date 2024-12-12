@@ -1,7 +1,8 @@
 # API Design: List Security Tokens (STs)
 
 ## Overview
-This API retrieves a list of all security tokens (STs), supporting pagination for efficient data management. 
+
+This API retrieves a list of all security tokens (STs) and supports pagination to manage data more efficiently.
 
 ---
 
