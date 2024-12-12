@@ -1,6 +1,7 @@
 # API Design: Create Security Token (ST)
 
 ## Overview
+
 This API creates a security token (ST) using Scalar DL.
 ---
 
