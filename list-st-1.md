@@ -6,7 +6,6 @@ This API retrieves a list of all security tokens (STs), supporting pagination fo
 ---
 
 ### Sequence Diagram
-
 ```mermaid
 sequenceDiagram
     participant Client as Client
@@ -20,9 +19,7 @@ sequenceDiagram
     Database -->> Service: Return List of Security tokens
     Service -->> Controller: Return List of Security tokens with pagination
     Controller -->> Client: Success responce
-    end
 
-```
 
 ---
 
