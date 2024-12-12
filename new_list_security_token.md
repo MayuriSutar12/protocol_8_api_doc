@@ -13,10 +13,7 @@ sequenceDiagram
         Service -->> Controller: HTTP 400 Bad Request<br/>Invalid Query Parameters
         Controller -->> Client: HTTP 400 Bad Request<br/>Invalid Query Parameters
     else Validation Succeeded
-        Service ->> Scalardl: Validate Data Integrity and Authorization
-        Scalardl ->> Database: Validate Data Integrity and Authorization
-        alt Scalardl Validation Failed
-            Scalardl -->> Service: Validation Error
+        Service ->> Database: Validate Data Integrity and Authorization
             Database -->> Scalardl: Validation Error
             Service -->> Controller: HTTP 400 Bad Request<br/>Validation Error
             Controller -->> Client: HTTP 400 Bad Request<br/>Validation Error
