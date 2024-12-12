@@ -13,7 +13,7 @@
     Controller ->> Service: Validate Request Body
     Service ->> Scalardl: call contract (CreateSt)
     alt 
-        Scalardl -->> Scalardl: Check for duplicate entry
+        Scalardl -->> Scalardl: if duplicate entry
         Scalardl -->> Service: Error Response
         Service -->> Controller: Invalid issuer_id or Duplicate st_id Found
         Controller -->> Client: Error Response
