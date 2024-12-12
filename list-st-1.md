@@ -28,9 +28,9 @@ sequenceDiagram
 
 1.  Initiates a `GET` request to `/security-tokens` with optional query parameters `limit` and `offset`.
 2.  Controller forwards the request to Service for processing.
-3.  Service queries the Database to retrieve the list of security tokens, applying pagination if provided.
+3.  Service queries the Database to retrieve the list of security tokens.
 3.  Executes the query to retrieve the ST list. 
-4.  Database returns the list of tokens to Service.
+4.  Database returns the list of Security tokens to Service.
 5.  Service formats the response with tokens and pagination details.
 6.  Controller returns a success response with the token list.
 ---
