@@ -10,8 +10,8 @@ sequenceDiagram
     Client ->> Controller: GET /security-tokens<br/>with limit and offset (optional)
     Controller ->> Service: Retrieve Resources (limit, offset)
     Service ->> Database: Query Resources with limit and offset
-    alt No Security Tokens Found
-        Database -->> Service: No Security Tokens Found
+    alt Empty List
+        Database -->> Service: Empty List
         Service -->> Controller: Empty List
         Controller -->> Client: HTTP 404 Not Found<br/>No Resources Found
     else Resources Found
